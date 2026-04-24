@@ -3,8 +3,8 @@ session_start();
 
 // ── Database config ──────────────────────────────────────────
 $host   = "localhost";
-$dbname = "spotify_db";
-$dbuser = "root";
+$dbname = "*****";
+$dbuser = "******";
 $dbpass = "";          // XAMPP default: no password
 // ─────────────────────────────────────────────────────────────
 
