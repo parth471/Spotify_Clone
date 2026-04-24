@@ -5,7 +5,7 @@ session_start();
 $host   = "localhost";
 $dbname = "*****";
 $dbuser = "******";
-$dbpass = "";          // XAMPP default: no password
+$dbpass = "";          
 // ─────────────────────────────────────────────────────────────
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
