@@ -2,8 +2,8 @@
 session_start();
 
 $host   = "localhost";
-$dbname = "spotify_db";
-$dbuser = "root";
+$dbname = "*********";
+$dbuser = "*******";
 $dbpass = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
