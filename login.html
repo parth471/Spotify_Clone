@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify — Login</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        .error-msg, .success-msg {
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 14px;
+            font-size: 0.88rem;
+            text-align: center;
+            display: none;
+        }
+        .error-msg   { background:#ff4d4d22; color:#ff4d4d; border:1px solid #ff4d4d55; }
+        .success-msg { background:#1DB95422; color:#1DB954; border:1px solid #1DB95455; }
+        .error-msg.show, .success-msg.show { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Please login to your account</p>
+
+        <div class="error-msg"   id="errorMsg">❌ Invalid email or password. Please try again.</div>
+        <div class="success-msg" id="successMsg">✅ Account created! You can now log in.</div>
+
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="input-group">
+                <input type="email" id="email" name="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-group password-group">
+                <input type="password" id="password" name="password" required>
+                <label>Password</label>
+                <span id="togglePassword">👁</span>
+            </div>
+
+            <div class="options">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <p class="signup-text">
+            Don't have an account?
+            <a href="signup.html">Sign up</a>
+        </p>
+    </div>
+</div>
+
+<script src="login.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('error')   === '1')       document.getElementById('errorMsg').classList.add('show');
+    if (params.get('signup')  === 'success') document.getElementById('successMsg').classList.add('show');
+</script>
+</body>
+</html>
